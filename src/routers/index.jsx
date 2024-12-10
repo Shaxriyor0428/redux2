@@ -6,6 +6,7 @@ import Login from "../pages/register/Login";
 import Register from "../pages/register/Register";
 import Admin from "../pages/admin/Admin";
 import Auth from "../pages/auth/Auth";
+import NotFound from "../pages/not-found/Notfound";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
           <Route path="/admin" element={<Admin />} />
         </Route>
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
