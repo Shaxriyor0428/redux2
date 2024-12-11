@@ -21,11 +21,22 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const existUser = user.find((item) => item.username === data.username);
-    // console.log(existUser);
     if (existUser) {
       if (existUser.password === data.password) {
         dispatch(addToken("Ha payload bor"));
         return navigate("/admin");
+      } else {
+        return toast.error("🦄 Username or password incorrect!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
       }
     } else {
       return toast.error("🦄 Username or password incorrect!", {
