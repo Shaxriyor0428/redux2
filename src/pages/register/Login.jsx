@@ -23,7 +23,7 @@ const Login = () => {
     const existUser = user.find((item) => item.username === data.username);
     // console.log(existUser);
     if (existUser) {
-      if (existUser.password == data.password) {
+      if (existUser.password === data.password) {
         dispatch(addToken("Ha payload bor"));
         return navigate("/admin");
       }
